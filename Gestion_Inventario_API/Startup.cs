@@ -1,7 +1,12 @@
+using Gestion_Inventario_Repository;
+using Gestion_Inventario_Repository.Implementation;
+using Gestion_Inventario_Service;
+using Gestion_Inventario_Service.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,7 +30,17 @@ namespace Gestion_Inventario_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IArticuloRepository, ArticuloRepository>();
+            services.AddTransient<IArticuloService, ArticuloService>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Todos",
+                builder => builder.WithOrigins("*").WithHeaders("*").WithMethods("*"));
+            });
+            //services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +52,8 @@ namespace Gestion_Inventario_API
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("Todos");
 
             app.UseRouting();
 

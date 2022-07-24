@@ -5,11 +5,11 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gestion_Inventario_API", "Gestion_Inventario_API\Gestion_Inventario_API.csproj", "{C58EEF6F-3334-480F-9A18-A72964963D1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Inventario_Entity", "Entity\Gestion_Inventario_Entity.csproj", "{634AA5A8-A7F6-4FCC-900A-8F928C8EB205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gestion_Inventario_Entity", "Entity\Gestion_Inventario_Entity.csproj", "{634AA5A8-A7F6-4FCC-900A-8F928C8EB205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Inventario_UseCase", "Gestion_Inventario_UseCase\Gestion_Inventario_UseCase.csproj", "{C5DF1D92-AC8C-43EA-A081-BFC587D7C746}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gestion_Inventario_Service", "Gestion_Inventario_UseCase\Gestion_Inventario_Service.csproj", "{C5DF1D92-AC8C-43EA-A081-BFC587D7C746}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Inventario_Data", "Gestion_Inventario_Data\Gestion_Inventario_Data.csproj", "{A157C1B1-0A0D-4B58-8C41-03F2D2873A05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gestion_Inventario_Repository", "Gestion_Inventario_Data\Gestion_Inventario_Repository.csproj", "{A157C1B1-0A0D-4B58-8C41-03F2D2873A05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
