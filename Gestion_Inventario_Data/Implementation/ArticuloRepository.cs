@@ -31,6 +31,22 @@ namespace Gestion_Inventario_Repository.Implementation
             return true;
         }
 
+        public bool DeleteByCodigo(string codigo)
+        {
+            try
+            {
+                var response = context.Articulos.Where(q => q.Codigo == codigo).FirstOrDefault();
+                context.Remove(response);
+                context.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
         public Articulo Get(int id)
         {
             throw new NotImplementedException();
@@ -71,7 +87,11 @@ namespace Gestion_Inventario_Repository.Implementation
         {
             try
             {
-                context.Update(entity);
+                var response = context.Articulos.Where(q => q.Codigo == entity.Codigo).FirstOrDefault();
+                response.Descripcion = entity.Descripcion;
+                response.Cantidad = entity.Cantidad;
+                response.Nombre = entity.Nombre;
+                context.Update(response);
                 context.SaveChanges();
             }
             catch (System.Exception)

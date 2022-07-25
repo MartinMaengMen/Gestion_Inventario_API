@@ -7,5 +7,6 @@ namespace Gestion_Inventario_Repository
 {
     public interface IArticuloRepository : ICrudRepository<Articulo>
     {
+        bool DeleteByCodigo(String codigo);
     }
 }

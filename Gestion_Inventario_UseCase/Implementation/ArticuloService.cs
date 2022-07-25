@@ -18,6 +18,11 @@ namespace Gestion_Inventario_Service.Implementation
             return articuloRepository.Delete(id);
         }
 
+        public bool DeleteByCodigo(string codigo)
+        {
+            return articuloRepository.DeleteByCodigo(codigo);
+        }
+
         public Articulo Get(int id)
         {
             throw new NotImplementedException();

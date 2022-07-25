@@ -40,11 +40,18 @@ namespace Gestion_Inventario_API.Controllers
             );
         }
 
-        [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        //[HttpDelete("{id}")]
+        //public ActionResult Delete(int id)
+        //{
+        //    return Ok(
+        //        ArticuloService.Delete(id)
+        //    );
+        //}
+        [HttpDelete("{codigo}")]
+        public ActionResult DeleteByCodigo(string codigo)
         {
             return Ok(
-                ArticuloService.Delete(id)
+                ArticuloService.DeleteByCodigo(codigo)
             );
         }
     }
